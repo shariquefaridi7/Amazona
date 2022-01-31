@@ -3,11 +3,13 @@ import Router from "./Route/Post.js";
 import  Mongoose  from "mongoose";
 import bodyParser from "body-parser";
 import cors from 'cors';
+import dotenv from "dotenv";
 const app=Express();
+dotenv.config();
 const Port =5000;
 
 //Connect Db with Mongoose
-Mongoose.connect("mongodb+srv://Sharique123:Sharique123@cluster0.eecbc.mongodb.net/Amazona?retryWrites=true&w=majority").then(()=>{console.log("DataBase Connnect")}).catch(()=>console.log("Somethind Wrong With Db"));
+Mongoose.connect(mongodb_url).then(()=>{console.log("DataBase Connnect")}).catch(()=>console.log("Somethind Wrong With Db"));
 
 app.use(bodyParser.urlencoded({ extended: false }))
 

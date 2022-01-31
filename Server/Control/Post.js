@@ -71,13 +71,13 @@ export const Sigin=async(req,res)=>{
         const mailTransporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'shariquemohd9633@gmail.com',
-                pass: 'S7505606262s'
+                user: 'email',
+                pass: 'pass'
             }
         });
         
         const mailDetails = {
-            from: 'shariquemohd9633@gmail.com',
+            from: 'email',
             to: email,
             subject: `Order ${title}`,
             text:` Hello ${Name} 
