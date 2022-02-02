@@ -4,7 +4,7 @@ const url1 ='https://fakestoreapi.com/products';
 const url2='http://localhost:5000/post';
 const url3='http://localhost:5000/sigin';
 
-//API
+
 export const getProducts =async()=>{
     return  await axios.get(url1);
 
