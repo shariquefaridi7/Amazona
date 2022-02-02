@@ -20,7 +20,7 @@ export const PostData=async(req,res)=>{
                 //Generate Token--
                 if(email)
                 { 
-                const token = jwt.sign({email},"TokenForAmazona");
+                const token = jwt.sign({email},process.env.PostData);
                 console.log(token);
                 res.status(200).json({Send,token});
                 console.log(Send);
@@ -48,7 +48,7 @@ export const Sigin=async(req,res)=>{
             const CheckPassword=await bcrypt.compare(password,user.Password);
            
             if (CheckPassword) {
-               const SiginToken= jwt.sign({email},"SignInTest");
+               const SiginToken= jwt.sign({email},process.env.Sigin);
                
                 res.json({Name,SiginToken,email});
             } else {
@@ -71,13 +71,13 @@ export const Sigin=async(req,res)=>{
         const mailTransporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'email',
-                pass: 'pass'
+                user: process.env.email,
+                pass: process.env.pass
             }
         });
         
         const mailDetails = {
-            from: 'email',
+            from: process.env.email,
             to: email,
             subject: `Order ${title}`,
             text:` Hello ${Name} 
