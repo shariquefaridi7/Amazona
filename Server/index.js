@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 
 app.use(cors());
 
-// Use Route 
+// Use Routes
 app.use("/",Router);
 
 
